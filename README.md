@@ -1,9 +1,9 @@
-# IPFN cryptographic key-pair utilities in Go
+# IPFN cryptographic key pair utilities in Go
 
 [![IPFN project](https://img.shields.io/badge/project-IPFN-blue.svg?style=flat-square)](http://github.com/ipfn)
 [![GoDoc](https://godoc.org/github.com/ipfn/go-ipfn-keypair?status.svg)](https://godoc.org/github.com/ipfn/go-ipfn-keypair)
 
-IPFN cryptographic key-pair utilities for Go programming language.
+IPFN cryptographic key pair utilities for Go programming language.
 
 ## License
 

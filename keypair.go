@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package keypair implements cryptographic keypair utils.
+// Package keypair implements cryptographic key pair utils.
 package keypair
 
 import (
