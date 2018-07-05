@@ -26,8 +26,8 @@ import (
 	cid "gx/ipfs/QmapdYm1b22Frv3k17fqrBYTFRxwiaVJkB299Mfn33edeB/go-cid"
 
 	"github.com/btcsuite/btcd/btcec"
+	cells "github.com/ipfn/go-ipfn-cells"
 	"github.com/ipfn/ipfn/go/cids"
-	"github.com/ipfn/ipfn/go/opcode"
 	multihash "github.com/multiformats/go-multihash"
 )
 
@@ -40,9 +40,9 @@ var CIDPrefix = cid.Prefix{
 }
 
 // CID - Creates CID from public key.
-func CID(pub *btcec.PublicKey) (c *opcode.CID) {
+func CID(pub *btcec.PublicKey) (c *cells.CID) {
 	pubBytes := PubkeyBytes(pub)
-	c, _ = opcode.SumCID(CIDPrefix, pubBytes[1:])
+	c, _ = cells.SumCID(CIDPrefix, pubBytes[1:])
 	return
 }
 

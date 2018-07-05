@@ -21,7 +21,7 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcutil/hdkeychain"
-	"github.com/ipfn/ipfn/go/opcode"
+	cells "github.com/ipfn/go-ipfn-cells"
 )
 
 // KeyPair - Hierarchical deterministic derived key chain.
@@ -30,7 +30,7 @@ type KeyPair struct {
 }
 
 // CID - Returns public key as cid.
-func (key *KeyPair) CID() (_ *opcode.CID, err error) {
+func (key *KeyPair) CID() (_ *cells.CID, err error) {
 	pub, err := key.ECPubKey()
 	if err != nil {
 		return
