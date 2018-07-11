@@ -19,7 +19,7 @@ import (
 	"fmt"
 
 	bip39 "github.com/ipfn/go-bip39"
-	"github.com/ipfn/ipfn/go/crypto"
+	crypto "github.com/ipfn/go-ipfn-crypto"
 )
 
 // EncryptedSeed - Encrypted master key or seed.
