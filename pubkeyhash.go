@@ -27,14 +27,13 @@ import (
 
 	"github.com/btcsuite/btcd/btcec"
 	cells "github.com/ipfn/go-ipfn-cells"
-	"github.com/ipfn/ipfn/go/cids"
 	multihash "github.com/multiformats/go-multihash"
 )
 
 // CIDPrefix - Key CID prefix.
 var CIDPrefix = cid.Prefix{
 	Version:  1,
-	Codec:    cids.PubkeyHash,
+	Codec:    0x60ac,
 	MhType:   multihash.KECCAK_256,
 	MhLength: 32,
 }
@@ -42,7 +41,15 @@ var CIDPrefix = cid.Prefix{
 // CID - Creates CID from public key.
 func CID(pub *btcec.PublicKey) (c *cells.CID) {
 	pubBytes := PubkeyBytes(pub)
-	c, _ = cells.SumCID(CIDPrefix, pubBytes[1:])
+	return BytesToCID(pubBytes)
+}
+
+// BytesToCID - Creates CID from public key.
+func BytesToCID(pubBytes []byte) (c *cells.CID) {
+	c, err := cells.SumCID(CIDPrefix, pubBytes[1:])
+	if err != nil {
+		panic(err)
+	}
 	return
 }
 
