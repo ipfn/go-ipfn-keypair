@@ -23,18 +23,18 @@ package keypair
 import (
 	"crypto/elliptic"
 
+	mh "gx/ipfs/QmPnFwZ2JXKnXgMw8CdBPxn7FWh6LLdjUjxV1fKHuJnkr8/go-multihash"
 	cid "gx/ipfs/QmapdYm1b22Frv3k17fqrBYTFRxwiaVJkB299Mfn33edeB/go-cid"
 
 	"github.com/btcsuite/btcd/btcec"
 	cells "github.com/ipfn/go-ipfn-cells"
-	multihash "github.com/multiformats/go-multihash"
 )
 
 // CIDPrefix - Key CID prefix.
 var CIDPrefix = cid.Prefix{
 	Version:  1,
 	Codec:    0x60ac,
-	MhType:   multihash.KECCAK_256,
+	MhType:   mh.KECCAK_256,
 	MhLength: 32,
 }
 
