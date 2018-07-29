@@ -78,3 +78,13 @@ func HashPath(path string) string {
 	}
 	return strings.Join(r, "/")
 }
+
+var keyParams = &chaincfg.Params{
+	HDPrivateKeyID: [4]byte{0xb6, 0xb8, 0xd5, 0xfb},
+	HDPublicKeyID:  [4]byte{0xb6, 0xb8, 0xda, 0x34},
+	HDCoinType:     43153,
+}
+
+func init() {
+	chaincfg.Register(keyParams)
+}

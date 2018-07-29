@@ -19,7 +19,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcutil/hdkeychain"
 	cells "github.com/ipfn/go-ipfn-cells"
 )
@@ -122,14 +121,4 @@ func derivePath(key *KeyPair, path string) (res *KeyPair, err error) {
 		}
 	}
 	return
-}
-
-var keyParams = &chaincfg.Params{
-	HDPrivateKeyID: [4]byte{0xb6, 0xb8, 0xd5, 0xfb},
-	HDPublicKeyID:  [4]byte{0xb6, 0xb8, 0xda, 0x34},
-	HDCoinType:     43153,
-}
-
-func init() {
-	chaincfg.Register(keyParams)
 }
